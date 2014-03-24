@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/foundation.css')
+    script(src='/javascripts/vendor/jquery.js')
+    script(src='/javascripts/foundation.min.js')
+  body
+    div.row
+      div.twelve.columns
+        nav.top-bar
+          ul.title-area
+            li.name: h1: a(href='#') Echelon
+            li.divider
+          section.top-bar-section
+            ul.left
+              li: a(href='/') Home
+              li: a(href='/hosts') Hosts
+              li: a(href='/sites') Sites
+        div.row
+          div.twelve.columns
+            block content

@@ -1,0 +1,22 @@
+extends layout
+
+mixin transaction(data)
+  tr
+    td= data.timestamp
+    td: a(href='http://' + data.site_host + data.site_url)= data.site_host + data.site_url    
+
+block content
+    ul.breadcrumbs
+      li: a(href='/') Home
+      li: a(href='/hosts') Hosts
+      li.active: a(href='/hosts/site')= title
+    
+    table.twelve
+      thead
+        tr
+          th Timestamp
+          th Url
+        tbody
+          - for item in history
+            +transaction(item)
+

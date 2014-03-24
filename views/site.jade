@@ -1,0 +1,27 @@
+extends layout
+
+mixin linked_url(host,url)
+  a(href='http://' + host + url)= host + url
+
+mixin transaction(data)
+  tr
+    td= data.timestamp
+    td= data.source_host
+    td: a(href=data.site_host + data.site_url)= data.site_host + data.site_url
+
+block content
+    ul.breadcrumbs
+      li: a(href='/') Home
+      li: a(href='/sites') Sites
+      li.active: a(href='/sites/title')= title
+    
+    table.twelve
+      thead
+        tr
+          th Timestamp
+          th Host
+          th Url
+        tbody
+          - for item in history
+            +transaction(item)
+

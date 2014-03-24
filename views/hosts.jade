@@ -1,0 +1,20 @@
+extends layout
+
+mixin host(host)
+  tr
+    td= host.requests 
+    td: a(href='/hosts/' + host.source_host)= host.source_host
+
+block content
+    ul.breadcrumbs
+      li: a(href='/') Home
+      li.active: a(href='/hosts') Hosts
+
+     table.twelve
+      thead
+        tr
+          th Requests
+          th Host
+        tbody
+          - for host in hosts
+            +host(host)
