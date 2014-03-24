@@ -1,0 +1,21 @@
+-- Table: history
+
+-- DROP TABLE history;
+
+CREATE TABLE history
+(
+  id serial NOT NULL,
+  "timestamp" timestamp without time zone NOT NULL,
+  source_ip text,
+  source_host text,
+  dest_ip text,
+  dest_host text,
+  site_host text,
+  site_url text,
+  CONSTRAINT history_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE history
+  OWNER TO echelon;
