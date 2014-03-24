@@ -8,6 +8,6 @@ Running
 
     git clone git@github.com:gregbuehler/echelon.git
     createdb echelon; psql echelon < database.sql
+    npm install
     npm install -g nodemon
     sudo nodemon app.js
-
