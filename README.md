@@ -15,4 +15,4 @@ Running
 Notes
 -----
 
-echelon assumes you're using postgres with the included schema. `Update database.js` if the credentials or database name changes.
+echelon assumes you're using postgres with the included schema. Update `database.js` if the credentials or database name changes.
